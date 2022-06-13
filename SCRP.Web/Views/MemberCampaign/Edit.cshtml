@@ -1,0 +1,168 @@
+﻿@model  SCRP.Web.Models.MemberHelpCampaign.MemberCampaignEditViewModel
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+<!-- popular_causes_area_start  -->
+<div class="popular_causes_area mt-5 cause_details " style="margin-top:150px !important;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="section_title text-center mb-55">
+                    <h3><span>Member Aid Campaign</span></h3>
+                    <div class="causes_content">
+                        <h4>Please enter the information to be filled in about the campaign.</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="single_cause">
+                    <div class="causes_content registerMarginMK">
+                        <div class="limiter">
+                            @using (Html.BeginForm("Edit", "MemberCampaign", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            {
+                                
+
+                                @Html.AntiForgeryToken()
+                                @(Html.HiddenFor(a => a.Pet.Id))
+                                @*@(Html.HiddenFor(a => a.Post.PostTypeId, new { value = "1" }))*@
+                                <div class="container-login100 extraAreaMK" style="background-image: url('images/bg-01.jpg');">
+                                    <div class="wrap-login100">
+                                        <h3 class="wrap-input100 validate-input spanActiveEtMK">Pet Information</h3>
+                                        <div class="wrap-input100 validate-input">
+                                            <span class="spanActiveEtMK">Name</span>
+                                            @(Html.TextBoxFor(a => a.Pet.Name, new { @class = "input100 paddingDeleteMK" }))
+                                            <span class="focus-input100"></span>
+                                        </div>
+
+                                        <div class="wrap-input100 validate-input">
+                                            <span class="spanActiveEtMK">Type</span>
+                                            @(Html.DropDownListFor(a => a.PetType, new SelectList(Enum.GetValues(typeof(SCRP.Foundation.Enums.PetType))), new { @class = "input100 paddingDeleteMK" }))
+                                            <span class="focus-input100"></span>
+                                        </div>
+
+                                        <div class="wrap-input100 validate-input">
+                                            <span class="spanActiveEtMK">Age</span>
+                                            @(Html.TextBoxFor(a => a.Pet.Age, new { @class = "input100 paddingDeleteMK" }))
+                                            <span class="focus-input100"></span>
+                                        </div>
+
+                                        <div class="wrap-input100 validate-input">
+                                            <span class="spanActiveEtMK">Color</span>
+                                            @(Html.TextBoxFor(a => a.Pet.Color, new { @class = "input100 paddingDeleteMK" }))
+                                            <span class="focus-input100"></span>
+                                        </div>
+
+                                        <div class="wrap-input100 validate-input">
+                                            <span class="spanActiveEtMK">Height</span>
+                                            @(Html.TextBoxFor(a => a.Pet.Height, new { @class = "input100 paddingDeleteMK" }))
+                                            <span class="focus-input100"></span>
+                                        </div>
+
+                                        <div class="wrap-input100 validate-input">
+                                            <span class="spanActiveEtMK">Weight</span>
+                                            @(Html.TextBoxFor(a => a.Pet.Weight, new { @class = "input100 paddingDeleteMK" }))
+                                            <span class="focus-input100"></span>
+                                        </div>
+                                        <div class="wrap-input100 validate-input">
+                                            <span class="spanActiveEtMK">Male</span>
+                                            @Html.RadioButtonFor(model => model.Pet.IsMale, true)
+                                            &nbsp;
+                                            &nbsp;
+                                            <span class="spanActiveEtMK">Female</span>
+                                            @Html.RadioButtonFor(model => model.Pet.IsMale, false)
+                                        </div>
+                                        <div class="wrap-input100 validate-input">
+                                            <span class="spanActiveEtMK">Microchipped</span>
+                                            @Html.RadioButtonFor(model => model.Pet.Microchipped, true)
+                                            &nbsp;
+                                            &nbsp;
+                                            <span class="spanActiveEtMK">Not Microchipped</span>
+                                            @Html.RadioButtonFor(model => model.Pet.Microchipped, false)
+                                        </div>
+
+                                        <div class="wrap-input100 validate-input">
+                                            <span class="spanActiveEtMK">Strain</span>
+                                            @(Html.TextBoxFor(a => a.Pet.Strain, new { @class = "input100 paddingDeleteMK" }))
+                                            <span class="focus-input100"></span>
+                                        </div>
+
+                                        @*<div class="wrap-input100 validate-input">
+                                            <span class="spanActiveEtMK">Last Seen Date</span>
+                                            @(Html.TextBoxFor(a => a.Pet.LastSeenDate, new { @class = "input100 paddingDeleteMK" }))
+                                            <span class="focus-input100"></span>
+                                        </div>
+
+                                        <div class="wrap-input100 validate-input">
+                                            <span class="spanActiveEtMK">Last Seen Location</span>
+                                            @(Html.TextBoxFor(a => a.Pet.LastSeenLocation, new { @class = "input100 paddingDeleteMK" }))
+                                            <span class="focus-input100"></span>
+                                        </div>*@
+                                    </div>
+                                </div>
+
+                                <div class="container-login100 extraAreaMK" style="background-image: url('images/bg-01.jpg');">
+                                    <div class="wrap-login100">
+                                        @(Html.HiddenFor(a => a.Post.Id))
+                                        @(Html.HiddenFor(a => a.HelpCampaignDetail.Id))
+                                        <h3 class="wrap-input100 validate-input spanActiveEtMK">Campaign Detail</h3>
+                                        <div class="wrap-input100 validate-input">
+                                            <span class="spanActiveEtMK">Campaign Title</span>
+                                            @(Html.TextBoxFor(a => a.Post.Title, new { @class = "input100 paddingDeleteMK" }))
+                                            <span class="focus-input100"></span>
+                                        </div>
+                                        <div class="wrap-input100 validate-input">
+                                            <span class="spanActiveEtMK">Note</span>
+                                            @(Html.TextBoxFor(a => a.Post.Note, new { @class = "input100 paddingDeleteMK" }))
+                                            <span class="focus-input100"></span>
+                                        </div>
+                                        <div class="wrap-input100 validate-input">
+                                            <span class="spanActiveEtMK">Content</span>
+                                            @(Html.TextAreaFor(a => a.Post.Content, new { @class = "input100 paddingDeleteMK" }))
+                                            <span class="focus-input100"></span>
+                                        </div>
+                                        <div class="wrap-input100 validate-input">
+                                            <span class="spanActiveEtMK">BankAccount</span>
+                                            @(Html.TextBoxFor(a => a.HelpCampaignDetail.BankAccount, new { @class = "input100 paddingDeleteMK" }))
+                                            <span class="focus-input100"></span>
+                                        </div>
+                                        <div class="wrap-input100 validate-input">
+                                            <span class="spanActiveEtMK">Goal</span>
+                                            @(Html.TextBoxFor(a => a.HelpCampaignDetail.DonationAmount, new { @class = "input100 paddingDeleteMK" }))
+                                            <span class="focus-input100"></span>
+                                        </div>
+                                        @*<div class="wrap-input100 validate-input">
+                                            <span class="spanActiveEtMK">Current Collected Amount</span>
+                                            @(Html.TextBoxFor(a => a.HelpCampaignDetail.CollectedAmount, new { @class = "input100 paddingDeleteMK" }))
+                                            <span class="focus-input100"></span>
+                                        </div>*@
+                                        <div class="wrap-input100 validate-input">
+                                            <span class="spanActiveEtMK">Complete Date</span>
+                                            @(Html.TextBoxFor(a => a.Post.CompletedDate, new { @class = "input100 paddingDeleteMK" }))
+                                            <span class="focus-input100"></span>
+                                        </div>
+                                        <div class="validate-input">
+                                            <span class="spanActiveEtMK">Image</span>
+                                            <input type="file" name="ImageFile" class="input100 paddingDeleteMK" />
+                                            <img style="max-width: 100%;" class="imageOpacityMK" src="@Url.Content("~/images/" + Model.Image.Path)" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container-login100-form-btn">
+                                    <input type="submit" class="login100-form-btn" value="Create" />
+                                </div>
+                            }
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- popular_causes_area_end  -->

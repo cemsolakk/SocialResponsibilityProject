@@ -1,0 +1,97 @@
+﻿@model  SCRP.Web.Models.User.UserEditViewModel
+@{
+    ViewBag.Title = "Register";
+}
+
+<!-- popular_causes_area_start  -->
+<div class="popular_causes_area pt-120 cause_details ">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="section_title text-center mb-55">
+                    <h3><span>Create Account</span></h3>
+                    <div class="causes_content">
+                        <h4>Get started with your free account</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="single_cause">
+                    <div class="causes_content registerMarginMK">
+                        <div class="limiter">
+                            <div class="container-login100" style="background-image: url('../Content/images/bg-01.jpg');">
+                                <div class="wrap-login100">
+
+                                    @using (Html.BeginForm("Register", "User"))
+                                    {
+                                        <div class="wrap-input100 validate-input" data-validate="Enter Username">
+                                            @(Html.TextBoxFor(a => a.Member.FirstName, new { @class = "input100 paddingDeleteMK", placeholder = "FirstName" }))
+                                            <span class="focus-input100"></span>
+                                        </div>
+
+                                        <div class="wrap-input100 validate-input" data-validate="Enter Lastname">
+                                            @(Html.TextBoxFor(a => a.Member.LastName, new { @class = "input100 paddingDeleteMK", placeholder = "LastName" }))
+                                            <span class="focus-input100"></span>
+                                        </div>
+
+                                        <div class="wrap-input100 validate-input" data-validate="Enter Email">
+                                            @(Html.TextBoxFor(a => a.Member.Email, new { @class = "input100 paddingDeleteMK", placeholder = "Email" }))
+                                            <span class="focus-input100"></span>
+                                        </div>
+
+                                        <div class="wrap-input100 validate-input" data-validate="Enter Username">
+                                            @(Html.PasswordFor(a => a.Member.Password, new { @class = "input100 paddingDeleteMK", placeholder = "Password" }))
+                                            <span class="focus-input100"></span>
+                                        </div>
+
+                                        <div class="wrap-input100 validate-input" data-validate="Enter Username">
+                                            @(Html.TextBoxFor(a => a.Member.District, new { @class = "input100 paddingDeleteMK", placeholder = "District" }))
+                                            <span class="focus-input100"></span>
+                                        </div>
+
+                                        <div class="wrap-input100 validate-input" data-validate="Enter Username">
+                                            @(Html.TextBoxFor(a => a.Member.Birthdate, new { @class = "input100 paddingDeleteMK", placeholder = "Birthdate (Month/Day/Year)" }))
+                                            <span class="focus-input100"></span>
+                                        </div>
+
+                                        <div class="wrap-input100 validate-input" data-validate="Enter Username">
+                                            @(Html.TextBoxFor(a => a.Member.Phone, new { @class = "input100 paddingDeleteMK", placeholder = "Phone" }))
+                                            <span class="focus-input100"></span>
+                                        </div>
+
+                                        <div class="wrap-input100 validate-input" data-validate="Enter Username">
+                                            @(Html.TextBoxFor(a => a.Member.SecondPhone, new { @class = "input100 paddingDeleteMK", placeholder = "SecondPhone" }))
+                                            <span class="focus-input100"></span>
+                                        </div>
+
+                                        <div class="wrap-input100 validate-input" data-validate="Enter Username">
+                                            @(Html.TextBoxFor(a => a.Member.IBAN, new { @class = "input100 paddingDeleteMK", placeholder = "IBAN" }))
+                                            <span class="focus-input100"></span>
+                                        </div>
+                                        <div class="wrap-input100 validate-input" data-validate="Enter Username">
+                                            @(Html.TextBoxFor(a => a.Member.City, new { @class = "input100 paddingDeleteMK", placeholder = "City" }))
+                                            <span class="focus-input100"></span>
+                                        </div>
+
+                                        <div class="wrap-input100 validate-input" data-validate="Enter Username">
+                                            @(Html.TextBoxFor(a => a.Member.District, new { @class = "input100 paddingDeleteMK", placeholder = "District" }))
+                                            <span class="focus-input100"></span>
+                                        </div>
+
+                                        <div class="container-login100-form-btn">
+                                            <input type="submit" class="login100-form-btn" value="Register" />
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- popular_causes_area_end  -->

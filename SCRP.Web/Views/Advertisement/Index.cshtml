@@ -1,0 +1,55 @@
+﻿@model  SCRP.Web.Models.Advertisement.AdvertisementListViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<!-- bradcam_area_start  -->
+<div class="bradcam_area breadcam_bg overlay d-flex align-items-center justify-content-center" style="background-image:url(../Content/img/lost-dog.jpg); background-position: top;">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="bradcam_text text-center">
+                    <h3>Lost Pets</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- bradcam_area_end  -->
+<!-- popular_causes_area_start  -->
+<div class="popular_causes_area pt-120">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <div class="section_title text-center mb-55">
+                    <h3><span style="font-size:21px; padding-bottom:7px;">Lost Pet Database Registers that we operate at the TR National Pet Register</span></h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @{foreach (var adver in Model.AdvertisementViewModels)
+                {
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single_cause">
+                            <div class="thumb max">
+                                <img class="imageOpacityMK" src="@Url.Content("~/images/" + adver.ImagePath)" alt="">
+                            </div>
+                            <div class="causes_content">
+                                <div class="balance justify-content-between align-items-center textCenterMK">
+                                    <div class="balance justify-content-between align-items-center textCenterMK">
+                                        <span class="span1">@adver.MissingCount</span>
+                                        <br>
+                                        <span class="span2">Missing @adver.PetType</span>
+                                    </div>
+                                    <a href="#"><h4>@adver.Text</h4></a>
+                                    <a class="read_more" href="@Url.Action("Detail", "Advertisement", new { petTypeId = adver.PetTypeId })">View Lost @adver.PetType Register</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+<!-- popular_causes_area_end  -->

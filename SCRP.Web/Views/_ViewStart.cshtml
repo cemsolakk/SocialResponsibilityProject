@@ -1,0 +1,13 @@
+﻿@{
+    string cLayout = "";
+
+    if (Session["Id"] != null)
+    {
+        cLayout = "~/Views/Shared/_Layout2.cshtml";
+    }
+    else
+    {
+        cLayout = "~/Views/Shared/_Layout.cshtml";
+    }
+    Layout = cLayout;
+}

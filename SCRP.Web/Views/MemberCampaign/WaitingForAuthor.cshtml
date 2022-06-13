@@ -1,0 +1,51 @@
+﻿@model  SCRP.Web.Models.MemberHelpCampaign.MemberCampaignListViewModel
+@{
+    ViewBag.Title = "finishedCampaigns";
+}
+
+<!-- popular_causes_area_start  -->
+<div class="popular_causes_area pt-120">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <div class="section_title text-center mb-55">
+                    <h3><span style="font-size:21px; padding-bottom:7px;">My Waiting Verification For Donation</span></h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @{foreach (var post in Model.MemberCampaignListViewModels)
+                {
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single_cause">
+                            <div class="thumb max">
+                                <img src="@post.Image" alt="">
+                            </div>
+                            <div class="causes_content">
+                                <h4>
+                                    @Html.ActionLink(post.CampaignTitle, "Detail", "MemberCampaign", new { @id = post.PostId }, null)
+                                </h4>
+                                <div class="balance d-flex justify-content-between align-items-center textCenterMK">
+                                    <span>Donation Value: @post.DonationValue</span>
+                                </div>
+                                <div class="balance d-flex justify-content-between align-items-center textCenterMK">
+                                    <span>Donation Member: @post.DonationMember</span>
+                                </div>
+                                <div class="balance d-flex justify-content-between align-items-center textCenterMK">
+                                    <span>Donation IBAN: @post.DonationIban</span>
+                                </div>
+                                <div class="balance d-flex justify-content-between align-items-center textCenterMK">
+                                    @{ if (!post.ApprovedByOwner)
+                                        {
+                                            <a href="@Url.Action("ApproveCampaign", "MemberCampaign", new { id = post.PostId,value = post.DonationValue,memberHelpId= post.MemberHelpCampaignId })">I Get Donation <img src="~/Content/img/checkmark-for-verification.png"></a>
+                                        }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,95 @@
+﻿@model  SCRP.Web.Models.User.UserEditViewModel
+@{
+    ViewBag.Title = "MemberEdit";
+}
+<link rel="stylesheet" href="~/Content/css/editInformation.css">
+<!-- popular_causes_area_start  -->
+<div class="popular_causes_area pt-120 cause_details ">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="single_cause">
+                    <div class="causes_content blogDetailEditMK">
+                        <div class="personalImageBgMK" style="background-image:url('../Content/img/56538.jpg');">
+                            <img src="../Content/img/personalFrame3.png">
+                        </div>
+                        <div style="float: right;">
+                            <a href="@Url.Action("MemberInformation", "Member")"><img src="~/Content/img/checklist.png"></a>
+                        </div>
+                        <div class="headerEdit">
+                            <h5>Edit Personal Information</h5>
+                        </div>
+                        <div class="bilgilerMK2">
+
+                            @using (Html.BeginForm("MemberEdit", "Member"))
+                            {
+                                @Html.AntiForgeryToken()
+                                @(Html.HiddenFor(a => a.Member.Id))
+
+                                @(Html.TextBoxFor(a => a.Member.FirstName, new { @class = "question", @id = "nme", placeholder = "FirstName" }))
+                                <label for="nme"><span>FirstName</span></label>
+
+                                @(Html.TextBoxFor(a => a.Member.LastName, new { @class = "question", @id = "nme", placeholder = "LastName" }))
+                                <label for="nme"><span>LastName</span></label>
+
+                                @(Html.TextBoxFor(a => a.Member.Email, new { @class = "question", @id = "nme", placeholder = "Email" }))
+                                <label for="nme"><span>Email</span></label>
+
+                                @(Html.TextBoxFor(a => a.Member.Password, new { @class = "question", @id = "nme", placeholder = "Password" }))
+                                <label for="nme"><span>Password</span></label>
+
+                                @(Html.TextBoxFor(a => a.Member.District, new { @class = "question", @id = "nme", placeholder = "District" }))
+                                <label for="nme"><span>District</span></label>
+
+                                <div class="dateTimePicker">
+                                    @(Html.TextBoxFor(a => a.Member.Birthdate, new { @class = "question", @id = "datePicker" }))
+                                    <label for="datePicker"><span>Birthdate</span></label>
+                                </div>
+                                @(Html.TextBoxFor(a => a.Member.Phone, new { @class = "question", @id = "nme", placeholder = "Phone" }))
+                                <label for="nme"><span>Phone</span></label>
+
+                                @(Html.TextBoxFor(a => a.Member.SecondPhone, new { @class = "question", @id = "nme", placeholder = "SecondPhone" }))
+                                <label for="nme"><span>SecondPhone</span></label>
+
+                                @(Html.TextBoxFor(a => a.Member.City, new { @class = "question", @id = "nme", placeholder = "City" }))
+                                <label for="nme"><span>City</span></label>
+
+                                @(Html.TextBoxFor(a => a.Member.District, new { @class = "question", @id = "nme", placeholder = "District" }))
+                                <label for="nme"><span>District</span></label>
+
+                                @(Html.TextBoxFor(a => a.Member.IBAN, new { @class = "question", @id = "nme", placeholder = "IBAN" }))
+                                <label for="nme"><span>IBAN</span></label>
+
+                                <input type="submit" class="login100-form-btn" value="Edit" />
+                            }
+                            <!-- popular_causes_area_end  -->
+                            @*<form>
+            <input type="text" name="name" class="question" id="nme" required autocomplete="off" value="mertkaracam" />
+            <label for="nme"><span>Username</span></label>
+            <input type="text" name="name" class="question" id="nme" required autocomplete="off" value="**********" />
+            <label for="nme"><span>Password</span></label>
+            <input type="text" name="name" class="question" id="nme" required autocomplete="off" value="Mert KARAÇAM" />
+            <label for="nme"><span>Name Surname</span></label>
+            <input type="text" name="name" class="question" id="nme" required autocomplete="off" value="01.01.1996" />
+            <label for="nme"><span>Birthdate</span></label>
+            <input type="text" name="name" class="question" id="nme" required autocomplete="off" value="info@mertkaracam.com" />
+            <label for="nme"><span>Email</span></label>
+            <input type="text" name="name" class="question" id="nme" required autocomplete="off" value="+90 (123) 456 78 90" />
+            <label for="nme"><span>Phone Number</span></label>
+            <input type="text" name="name" class="question" id="nme" required autocomplete="off" value="" />
+            <label for="nme"><span>2.Phone Number</span></label>
+            <input type="text" name="name" class="question" id="nme" required autocomplete="off" value="Istanbul" />
+            <label for="nme"><span>City</span></label>
+            <input type="text" name="name" class="question" id="nme" required autocomplete="off" value="Bahcelievler" />
+            <label for="nme"><span>District</span></label>
+            <input type="text" name="name" class="question" id="nme" required autocomplete="off" value="TR123456789101112" />
+            <label for="nme"><span>IBAN</span></label>
+        </form>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- popular_causes_area_end  -->

@@ -1,0 +1,512 @@
+.headerMenuMK{
+    flex: 0 0 90% !important;
+    max-width: 90% !important;
+}
+.headerLogoMK{
+    flex: 0 0 10% !important;
+    max-width: 10% !important;
+}
+.headerLoginMK{
+   margin-right: 205px !important;
+    
+}
+.registerBtnMK{
+    background-color: #FFF !important;
+    border-radius: 10px;
+}
+.registerBtnMK a{
+    padding: 10px !important;
+    color:#900000 !important;
+}
+.registerBtnMK a:hover{
+    color:#000 !important;
+}
+.WelcomeMessageTextMK{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.88;
+    color: #5c5c5c;
+    margin-bottom: 0px;
+    font-family: "Open Sans", sans-serif;
+}
+.WelcomeMessageHeaderMK{
+    padding-top: 120px !important;
+    padding-bottom: 120px !important;
+}
+.textCenterMK{
+    text-align: center;
+}
+.span1{
+    font-size:25px !important;
+    font-weight: bold !important;
+}
+.span2{
+    color: #9b9b9b !important;
+    font-size:15px !important;
+    font: 100 !important;
+}
+.listOfRegisterBenefitsMK{
+    padding: 0px !important;
+}
+.listOfRegisterBenefitsMK ul{
+    margin-left: 2%;
+    margin-bottom: 30px;
+}
+.listOfRegisterBenefitsMK ul li{
+        list-style-image: url('../img/paw-black-shape.png') !important;
+        color: #7A7B7C;
+        color: #7A7B7C;
+        font-size: 16px;
+        font-weight: 400;
+        font-family: "Open Sans", sans-serif; 
+}
+.listOfRegisterBenefitsMK h2{
+    text-align: center;
+    text-shadow: 2px 2px 4px #7A7B7C;
+    margin-bottom: 40px;
+    font-size: 20px;
+    
+}
+.listOfRegisterBenefitsMK h2 span{
+    color:#900000;
+}
+
+.donationTXT h2{
+    text-align: center;
+    text-shadow: 2px 2px 4px #7A7B7C;
+    margin-bottom: 40px;
+    font-size: 20px;
+    margin-top: 250px;
+}
+.donationTXT h2 span{
+    color:#900000;
+}
+.donationIMG{
+    margin-left: 37%; 
+    z-index: -2; 
+    position: absolute; 
+    top: 35%;
+}
+.btnRegisterMK{
+    width: 100% !important;
+    background-color: #900000 !important;
+    color: #fff !important;
+    border:none !important;
+    transition: 0.3s;
+    margin-top: 30px;
+}
+.btnRegisterMK:hover{
+    width: 100% !important;
+    background-color: #7A7B7C !important;
+    border:none !important;
+}
+.bgDonationMK{
+    max-width: 50%;
+    position: absolute;
+    opacity: 0.2;
+    left: 25%;
+    top: -25%;
+    z-index: -1 !important;
+}
+
+
+.pagination-container {
+  margin: 100px auto;
+  text-align: center;
+}
+.pagination {
+  position: relative;
+}
+.pagination a {
+  position: relative;
+  display: inline-block;
+  color: #2c3e50;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 8px 16px 10px;
+}
+.pagination a:before {
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  content: "";
+  top: 0;
+  left: 0;
+  background-color: #900000;
+  border-radius: 10px;
+  transform: scale(0);
+  transition: all 0.2s;
+}
+.pagination a:hover,
+.pagination a .pagination-active {
+  color: #fff;
+}
+.pagination a:hover:before,
+.pagination a .pagination-active:before {
+  transform: scale(1);
+}
+.pagination .pagination-active {
+  color: #fff;
+}
+.pagination .pagination-active:before {
+  transform: scale(1);
+}
+.pagination-newer {
+  margin-right: 50px;
+}
+.pagination-older {
+  margin-left: 50px;
+}
+.loginMarginMK{
+    margin-top: -150px !important;
+    padding: 0px !important;
+}
+.registerMarginMK{
+    margin-top: -100px !important;
+    padding: 0px !important;
+}
+.p-t-35 a:hover{
+    color: #fff !important;
+}
+.paddingDeleteMK{
+    padding: 0px !important;
+}
+
+
+.searchBtnMK{
+    margin-left: 68%;
+    margin-bottom: 50px;
+}
+.searchBtnMK input[type=text] {
+    position: relative;
+    padding: 8px 10px 6px 17px;
+    width: 350px;
+    color: #fff !important;
+    font-size: 16px;
+    font-weight: 100;
+    letter-spacing: 2px;
+    border: none;
+    border-radius: 5px;
+    background: #900000;
+    transition: width 0.4s ease;
+    outline: none;
+}
+.searchBtnMK input[type=text]:focus {
+    width: 350px;
+}
+.searchBtnMK a i {
+    position: relative;
+    left: -15px;
+    color: #fff !important;
+}
+.searchBtnMK a {
+    margin-left: -15px;
+}
+.editMK{
+    float:left !important;
+    margin: 9px 10px 10px 0px !important;
+    width: 25%;
+    box-shadow: 3px 3px 5px #9b9b9b;
+}
+.editMK2{
+    margin:0px !important;
+}
+.editMK3{
+    float:right !important;
+    margin: 9px 10px 10px 5px !important;
+    width: 25%;
+    box-shadow: 3px 3px 5px #9b9b9b;
+}
+.blogDetailEditMK h6{
+    margin-top:10px;
+}
+
+
+
+  
+  /* ===== Actual Styles ===== */
+  
+  /* ===== Horizontal Rule ===== */
+  .rule {
+    margin: 10px 0;
+    border: none;
+    height: 1.5px;
+    background-image: linear-gradient(left, #f0f0f0, #c9bbae, #f0f0f0);
+  }
+  
+  /* ===== Select Box ===== */
+  .sel {
+    font-size: 1rem;
+    display: inline-block;
+    width: 350px;
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 50px;
+    margin-right: 25px;
+  }
+  
+  .sel::before {
+    position: absolute;
+    content: '\f063';
+    font-family: 'FontAwesome';
+    font-size: 2em;
+    color: #900000;
+    right: 20px;
+    top: calc(50% - 0.5em);
+  }
+  
+  .sel.active::before {
+    transform: rotateX(-180deg);
+  }
+  
+  .sel__placeholder {
+    display: block;
+    font-family: 'Quicksand';
+    font-size: 2.3em;
+    color: #838e95;
+    padding: 0.2em 0.5em;
+    text-align: left;
+    pointer-events: none;
+    user-select: none;
+    visibility: visible;
+  }
+  
+  .sel.active .sel__placeholder {
+    visibility: hidden;
+  }
+  
+  .sel__placeholder::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0.2em 0.5em;
+    content: attr(data-placeholder);
+    visibility: hidden;
+  }
+  
+  .sel.active .sel__placeholder::before {
+    visibility: visible;
+  }
+  
+  .sel__box {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: -4px;
+    display: none;
+    list-style-type: none;
+    text-align: left;
+    font-size: 1em;
+    background-color: #FFF;
+    width: calc(100% + 8px);
+    box-sizing: border-box;
+  }
+  
+  .sel.active .sel__box {
+    display: block;
+    animation: fadeInUp 500ms;
+  }
+  
+  .sel__box__options {
+    display: list-item;
+    font-family: 'Quicksand';
+    font-size: 1.5em;
+    color: #838e95;
+    padding: 0.5em 1em;
+    user-select: none;
+  }
+  
+  .sel__box__options::after {
+    content: '\f00c';
+    font-family: 'FontAwesome';
+    font-size: 0.5em;
+    margin-left: 5px;
+    display: none;
+  }
+  
+  .sel__box__options.selected::after {
+    display: inline;
+  }
+  
+  .sel__box__options:hover {
+    background-color: #ebedef;
+  }
+  
+  /* ----- Select Box Black Panther ----- */
+  .sel {
+    border-bottom: 4px solid rgba(0, 0, 0, 0.3);
+  }
+  
+  .sel--black-panther {
+    z-index: 3;
+  }
+  
+  /* ----- Select Box Superman ----- */
+  .sel--superman {
+  /*   display: none; */
+    z-index: 2;
+  }
+  
+  /* ===== Keyframes ===== */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 20px, 0);
+    }
+  
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+    }
+  }
+  .searchBtnLostPet{
+      background-color: #900000 !important;
+      border: 1px solid #900000 !important;
+      color:#FFF !important;
+      transition: 0.3s;
+      height: 53px !important;
+      padding-top: 8px;
+  }
+  .searchBtnLostPet:hover{
+    background-color: #fff !important;
+    border: 1px solid #900000 !important;
+    color:#900000 !important;
+}
+
+.altMenuMK {
+    margin-top: 92px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    border-radius: 0px 0px 10px 10px !important;
+    background-color: #FFF !important;
+    color: #900000 !important;
+    padding-left: 0px !important;
+    border: 1px solid #900000;
+}
+.ustMenuMK{
+  border-radius: 10px 10px  0px 0px !important;
+}
+.headerLoginMK2{
+  margin-right: 415px !important;
+}
+.headerMenuMK2{
+  transition: none!important;
+}
+.headerMenuMK2 nav ul li a{
+  color:#900000 !important;
+  transition: 0.3;
+}
+.headerMenuMK2 nav ul li a:hover{
+  color:#000 !important;
+}
+.headerMenuMK2 nav ul li a img{
+  width: 24px !important;
+}
+.personalImageBgMK{
+  width: 300px !important;
+  background-size: 200px !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 300px;
+  border-radius: 500px;
+  float: left;
+}
+.personalImageBgMK img{
+  width: 300px;
+  height: 300px;
+}
+.bilgilerMK{
+  width: 100%;
+}
+.bilgilerMK p{
+  margin-bottom: 0px !important;
+  margin-right: 0px;
+}
+.bilgilerMK p:nth-child(odd){
+  float: left; 
+  font-weight: bold;
+  width: 200px;
+}
+.subMenuMK{
+  transition: 0 !important;
+  border-left:1px solid #900000;
+  border-right:1px solid #900000;
+  border-bottom:1px solid #900000;
+  margin-top: 1px !important;
+  border-radius: 0px 0px 10px 10px !important;
+}
+.leftRightMarginMK{
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.extraAreaMK{
+  margin-top: 82px;
+  width: 50% !important;
+  float: left !important;
+}
+.extraAreaMK2 div{
+  margin-top: -300px !important;
+  width: 98% !important;
+  height: 400px !important;
+  clear: both;
+}
+.spanActiveEtMK{
+    color: #CCC !important ;
+    margin-left: -2px !important;
+}
+.spanActiveEtMK2{
+  color: #000 !important ;
+  margin-left: -2px !important;
+}
+.bigTextArea textarea{
+  height: auto !important;
+}
+.extraAreaMK2 img{
+  margin-right: 35px;
+}
+.extraAreaMK2{
+  height: 300px !important;
+}
+
+.campaignBtnLostPet{
+  float: right;
+  background-color: #fff !important;
+  border: 1px solid #fff !important;
+  color:#900000 !important;
+  transition: 0.3s;
+  height: 53px !important;
+  padding-top: 5px;
+  width: 190px !important;
+}
+.campaignBtnLostPet:hover{
+background-color: #999 !important;
+border: 1px solid #999 !important;
+color:#fff !important;
+}
+
+.myLostPetAdImageBgMK{
+  width: 300px !important;
+  height: 300px;
+  float: left;
+  margin-right: 20px !important;
+}
+.myLostPetAdImageBgMK img{
+  border-radius: 20px;
+  margin-right: 20px !important;
+}
+.myLostPetDetailMK{
+  padding: 0px !important;
+}

@@ -1,0 +1,53 @@
+﻿@model  SCRP.Web.Models.Posts.PostListViewModel
+@{
+    ViewBag.Title = "finishedCampaigns";
+}
+
+<!-- popular_causes_area_start  -->
+<div class="popular_causes_area pt-120">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <div class="section_title text-center mb-55">
+                    <h3><span style="font-size:21px; padding-bottom:7px;">My Completed Campaigns</span></h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @{foreach (var post in Model.Posts)
+                {
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single_cause">
+                            <div class="thumb max">
+                                <img src="~/Content/img/9fb6371f-0990-424b-9dc0-ca7ebe96dbc8.jpg" alt="">
+                            </div>
+                            <div class="causes_content">
+                                <div class="custom_progress_bar">
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+                                            <span class="progres_count">
+                                                100%
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="balance justify-content-between align-items-center textCenterMK">
+                                    <span>
+                                        <a href="#"><img src="~/Content/img/cross-remove-sign.png" class="leftRightMarginMK"></a>
+                                    </span>
+                                </div>
+                                <div class="balance d-flex justify-content-between align-items-center textCenterMK">
+                                    <span>Collected Amount: @post.HelpCampaignDetail.CollectedAmount</span>
+                                    <span>Deadline:  @post.CompletedDate</span>
+                                </div>
+                                <a href="@Url.Action("Detail", "MemberCampaign")"><h4>@post.Title</h4></a>
+                                <p>@post.Note</p>
+                                <a class="read_more" href="@Url.Action("Detail", "MemberCampaign",new { id = post.Id })">View Detail</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+    </div>

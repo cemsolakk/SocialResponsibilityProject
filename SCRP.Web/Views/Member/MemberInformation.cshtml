@@ -1,0 +1,41 @@
+﻿@model  SCRP.Web.Models.User.UserEditViewModel
+
+@{
+    ViewBag.Title = "MemberInformation";
+}
+
+
+<!-- popular_causes_area_start  -->
+<div class="popular_causes_area pt-120 cause_details ">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="single_cause">
+                    <div class="causes_content blogDetailEditMK">
+                        <div class="personalImageBgMK" style="background-image:url('../Content/img/56538.jpg');">
+                            <img src="../Content/img/personalFrame3.png">
+                        </div>
+                        <div style="float: right;">
+                            <a href="@Url.Action("MemberEdit", "Member")"><img src="~/Content/img/resume.png"></a>
+                        </div>
+                        <div>
+                            <h5>Personal Information</h5>
+                        </div>
+                        <div class="bilgilerMK">
+                            <div class="BilgilerMKK"><p>FirstName:</p><p>@Model.Member.FirstName</p></div>
+                            <div class="BilgilerMKK"><p>LastName:</p><p>@Model.Member.LastName</p></div>
+                            <div class="BilgilerMKK"><p>Email:</p><p>@Model.Member.Email</p></div>
+                            <div class="BilgilerMKK"><p>Birthdate:</p><p>@Model.Member.Birthdate</p></div>
+                            <div class="BilgilerMKK"><p>City:</p><p>@Model.Member.City</p></div>
+                            <div class="BilgilerMKK"><p>District:</p><p>@Model.Member.District</p></div>
+                            <div class="BilgilerMKK"><p>IBAN:</p><p>@Model.Member.IBAN</p></div>
+                            <div class="BilgilerMKK"><p>Phone:</p><p>@Model.Member.Phone</p></div>
+                            <div class="BilgilerMKK"><p>SecondPhone:</p><p>@Model.Member.SecondPhone</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- popular_causes_area_end  -->

@@ -1,0 +1,68 @@
+﻿@model  SCRP.Web.Models.Posts.PostListViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<!-- popular_causes_area_start  -->
+<div class="popular_causes_area pt-120">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <div class="section_title text-center mb-55">
+                    <h3><span style="font-size:21px; padding-bottom:7px;">My Campaigns</span></h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @{foreach (var post in Model.Posts)
+                {
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single_cause">
+                            <div class="thumb max">
+                                <img src="@post.ImagePostMappings.FirstOrDefault().Image.Path" alt="">
+                            </div>
+                            @{
+                                int percentVal = 0;
+                                if (post.HelpCampaignDetail.CollectedAmount != 0)
+                                {
+                                    percentVal = (int)((post.HelpCampaignDetail.CollectedAmount * 100) / post.HelpCampaignDetail.DonationAmount);
+                                }
+                            }
+                            <div class="causes_content">
+                                <div class="custom_progress_bar">
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: @percentVal%;" aria-valuenow="@percentVal" aria-valuemin="0" aria-valuemax="100">
+                                            <span class="progres_count">
+                                                %@percentVal
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="balance justify-content-between align-items-center textCenterMK">
+                                    <span>
+                                        <a href="@Url.Action("CompleteCampaign", "MemberCampaign", new { id = post.Id })"><img src="~/Content/img/checkmark-for-verification.png"></a>
+                                        <a href="@Url.Action("DeleteCampaign", "MemberCampaign", new { id = post.Id })"><img src="~/Content/img/cross-remove-sign.png" class="leftRightMarginMK"></a>
+                                        <a href="@Url.Action("Edit", "MemberCampaign", new { id = post.Id })"><img src="~/Content/img/write-a-note.png"></a>
+                                    </span>
+                                </div>
+                                <div class="balance d-flex justify-content-between align-items-center textCenterMK">
+                                    <span>Goal: @post.HelpCampaignDetail.DonationAmount</span>
+                                    <span>
+                                        Deadline:  @{ var date = ""; if (post.CompletedDate.HasValue) { date = $"{post.CompletedDate.Value.Day}/{post.CompletedDate.Value.Month}/{post.CompletedDate.Value.Year}"; } }
+                                        @date
+                                    </span>
+                                </div>
+
+                                <a href="#"><h4>@post.Title</h4></a>
+
+                                <a class="read_more" href="@Url.Action("Detail", "MemberCampaign", new { id= post.Id })">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+
+        </div>
+    </div>
+</div>
+<!-- popular_causes_area_end  -->
