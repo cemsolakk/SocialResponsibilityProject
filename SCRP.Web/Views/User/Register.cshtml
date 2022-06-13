@@ -17,6 +17,14 @@
             </div>
         </div>
 
+        @if( TempData["Error"] != null)
+            {
+                <br />
+                <h5 style="color:darkred"> @TempData["Error"] </h5>
+                <br />
+                
+            }
+
         <div class="row">
             <div class="col-lg-12 col-md-12">
                 <div class="single_cause">

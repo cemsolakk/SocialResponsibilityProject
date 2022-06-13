@@ -10,19 +10,6 @@ namespace SCRP.Web.Controllers
 {
     public class UserController : Controller
     {
-        //private readonly IMemberBLL _memberBLL;
-
-        //public UserController(IMemberBLL memberBLL)
-        //{
-        //    _memberBLL = memberBLL;
-        //}
-        //// GET: Home
-
-        public ActionResult Register()
-        {
-            return View();
-        }
-
         public DatabaseContext GetDatabaseContext()
         {
             DatabaseContext context = new DatabaseContext();
@@ -30,17 +17,40 @@ namespace SCRP.Web.Controllers
             return context;
         }
 
-        //[HttpPost]
-        //public ActionResult Register(UserEditViewModel userEditViewModel)
-        //{
-        //    Member member = userEditViewModel.Member;
-        //    if (_memberBLL.Insert(member) > 0)
-        //    {
-        //        TempData["CssClassName"] = "success";
-        //        TempData["Message"] = "Registration Successful.";
-        //    }
-        //    return View();
-        //}
+        public ActionResult Register()
+        {
+            UserEditViewModel viewModel = new UserEditViewModel();
+            viewModel.Member = new Member();
+            return View(viewModel);
+        }
+
+       
+
+        [HttpPost]
+        public ActionResult Register(UserEditViewModel userEditViewModel)
+        {
+            Member member = userEditViewModel.Member;
+            var context = GetDatabaseContext();
+            member.CreatedOn = DateTime.Now;
+            if (context.Members.Any(x=> x.Email == member.Email))
+            {
+                TempData["Error"] = "Bu email adresi zaten kullanılıyor";
+                return View();
+            }
+            if (String.IsNullOrEmpty(member.Password) || String.IsNullOrEmpty(member.Email) || String.IsNullOrEmpty(member.FirstName)
+                || String.IsNullOrEmpty(member.LastName) || String.IsNullOrEmpty(member.Phone))
+            {
+                TempData["Error"] = "Bu email adresi zaten kullanılıyor";
+                return View();
+            }
+            context.Members.Add(member);
+            context.SaveChanges();
+            TempData["CssClassName"] = "success";
+            TempData["Message"] = "Registration Successful.";
+
+            return RedirectToAction("Login");
+        }
+
 
         public ActionResult Login()
         {

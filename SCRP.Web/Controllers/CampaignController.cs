@@ -119,6 +119,10 @@ namespace SCRP.Web.Controllers
             MemberCampaignEditViewModel memberAdvertimentEditViewModel = new MemberCampaignEditViewModel();
             if (id.HasValue && id.Value != default) //Edit
             {
+                if(Session.Keys.Count > 0)
+                {
+                    memberAdvertimentEditViewModel.MemberId = Convert.ToInt32(Session["ID"]);
+                }
                 //var post = _postBLL.GetById(id.Value);
                 Post post = context.Posts.Include("Member").Include("HelpCampaignDetail")
                     .Include("Pet").Include("ImagePostMappings").Include("ImagePostMappings.Image")

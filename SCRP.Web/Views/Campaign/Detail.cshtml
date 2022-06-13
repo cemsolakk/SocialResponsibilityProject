@@ -10,7 +10,7 @@
             <div class="col-lg-12 col-md-12">
                 <div class="single_cause">
                     <div class="thumb">
-                        <img src="@Model.Image.Path" alt="">
+                        <img src="@Url.Content("~/images/" + Model.Image.Path)" alt="">
                     </div>
                     <div class="causes_content">
                         <div class="custom_progress_bar">
@@ -32,8 +32,8 @@
                         <div class="balance d-flex justify-content-between align-items-center">
                             <span>CollectedAmount: ₺@Model.HelpCampaignDetail.CollectedAmount</span>
                             <span>
-                                Deadline:  @{ var date = ""; if (Model.Post.CompletedDate.HasValue) { date = $"{Model.Post.CompletedDate.Value.Day}/{Model.Post.CompletedDate.Value.Month}/{Model.Post.CompletedDate.Value.Year}"; } }
-                                @date
+                                Deadline: 
+                                @Model.HelpCampaignDetail.Posts[0].CompletedDate
                             </span>
                         </div>
                         <h4>@Model.Post.Title</h4>

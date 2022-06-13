@@ -10,6 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Web.Hosting;
 using System.Web.Mvc;
+using SCRP.Foundation.Entities;
 using SCRP.DAL.EF;
 
 
@@ -194,7 +195,7 @@ namespace SCRP.Web.Controllers
 
             //}
             var context = GetDatabaseContext();
-            if (Session["ID"].ToString() == "null")
+            if (Session.Keys.Count < 1)
             {
                 return RedirectToAction("Logout", "User");
             }
