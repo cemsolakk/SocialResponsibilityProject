@@ -4,58 +4,64 @@
 }
 
 <!-- popular_causes_area_start  -->
-    <div class="popular_causes_area pt-120 cause_details ">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-9">
-                    <div class="section_title text-center mb-55">
-                        <h3><span>@Model.Post.Title</span></h3>
-                        @Model.Post.Note
-                    </div>
+<div class="popular_causes_area pt-120 cause_details ">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <div class="section_title text-center mb-55">
+                    <h3><span>@Model.Post.Title</span></h3>
+                    @if (!String.IsNullOrEmpty(Model.Post.Note))
+                    {
+                        <p>@Model.Post.Note</p>
+                    }
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div>
+                    @if (Model.Post.ImagePostMappings.Count > 0)
+                    {
                         <img src="@Url.Content("~/images/" + Model.Post.ImagePostMappings[0].Image.Path)" width="300px">
-                    </div>
-                    <p>@Model.Post.Content</p>
+                    }
                 </div>
-                <div class="col-md-4">
-                    <div>
-                        <h5>Pet Information</h5>
-                    </div>
-                    <div class="bilgilerMK">
-                        <div class="BilgilerMKK"><p>Pet Name:</p><p>&nbsp;@Model.Post.Pet.Name</p></div>
-                        <div class="BilgilerMKK"><p>Missing since:</p><p>&nbsp;@Model.Post.Pet.LastSeenDate</p></div>
-                        <div class="BilgilerMKK"><p>Color:</p><p>&nbsp;@Model.Post.Pet.Color</p></div>
-                        <div class="BilgilerMKK">
-                            <p>Gender:</p>@{ if (Model.Post.Pet.IsMale)
-                                { <p>&nbsp;Male</p> }
-                                else
-                                {<p>&nbsp;Female</p>} }
-                        </div>
-                        <div class="BilgilerMKK"><p>Approx age:</p><p>&nbsp;@Model.Post.Pet.Age</p></div>
-                        <div class="BilgilerMKK"><p>Microchipped:</p><p>&nbsp;@Model.Post.Pet.Microchipped</p></div>
-                        <div class="BilgilerMKK"><p>Location:</p><p>&nbsp;@Model.Post.Pet.LastSeenLocation</p></div>
-                        <div class="BilgilerMKK"><p>Pet Listing ID:</p><p>&nbsp;#@Model.Post.Pet.Id</p></div>
-                        <div class="BilgilerMKK"><p>Pet Ad ID:</p><p>&nbsp;#@Model.Post.Id</p></div>
-                    </div>
+                <p>@Model.Post.Content</p>
+            </div>
+            <div class="col-md-4">
+                <div>
+                    <h5>Pet Information</h5>
                 </div>
-                <div class="col-md-4">
-                    <div>
-                        <h5>Member Information</h5>
+                <div class="bilgilerMK">
+                    <div class="BilgilerMKK"><p>Pet Name:</p><p>&nbsp;@Model.Post.Pet.Name</p></div>
+                    <div class="BilgilerMKK"><p>Missing since:</p><p>&nbsp;@Model.Post.Pet.LastSeenDate</p></div>
+                    <div class="BilgilerMKK"><p>Color:</p><p>&nbsp;@Model.Post.Pet.Color</p></div>
+                    <div class="BilgilerMKK">
+                        <p>Gender:</p>@{ if (Model.Post.Pet.IsMale)
+                            { <p>&nbsp;Male</p> }
+                            else
+                            {<p>&nbsp;Female</p>} }
                     </div>
-                    <div class="bilgilerMK">
-                        <div class="BilgilerMKK"><p>Owner Name:</p><p>&nbsp;@Model.Post.Member.FirstName @Model.Post.Member.LastName</p></div>
-                        <div class="BilgilerMKK"><p>Phone:</p><p>&nbsp;@Model.Post.Member.Phone</p></div>
-                        <div class="BilgilerMKK"><p>City:</p><p>&nbsp;@Model.Post.Member.City</p></div>
-                        <div class="BilgilerMKK"><p>District:</p><p>&nbsp;@Model.Post.Member.District</p></div>
-                    </div>
+                    <div class="BilgilerMKK"><p>Approx age:</p><p>&nbsp;@Model.Post.Pet.Age</p></div>
+                    <div class="BilgilerMKK"><p>Microchipped:</p><p>&nbsp;@Model.Post.Pet.Microchipped</p></div>
+                    <div class="BilgilerMKK"><p>Location:</p><p>&nbsp;@Model.Post.Pet.LastSeenLocation</p></div>
+                    <div class="BilgilerMKK"><p>Pet Listing ID:</p><p>&nbsp;#@Model.Post.Pet.Id</p></div>
+                    <div class="BilgilerMKK"><p>Pet Ad ID:</p><p>&nbsp;#@Model.Post.Id</p></div>
                 </div>
+            </div>
+            <div class="col-md-4">
+                <div>
+                    <h5>Member Information</h5>
+                </div>
+                <div class="bilgilerMK">
+                    <div class="BilgilerMKK"><p>Owner Name:</p><p>&nbsp;@Model.Post.Member.FirstName @Model.Post.Member.LastName</p></div>
+                    <div class="BilgilerMKK"><p>Phone:</p><p>&nbsp;@Model.Post.Member.Phone</p></div>
+                    <div class="BilgilerMKK"><p>City:</p><p>&nbsp;@Model.Post.Member.City</p></div>
+                    <div class="BilgilerMKK"><p>District:</p><p>&nbsp;@Model.Post.Member.District</p></div>
+                </div>
+            </div>
 
 
-                @*<div class="col-lg-8 col-md-8">
+            @*<div class="col-lg-8 col-md-8">
                     <div class="single_cause">
                         <div class="causes_content blogDetailEditMK myLostPetDetailMK">
                             <div class="myLostPetAdImageBgMK">
@@ -106,7 +112,7 @@
                         <div class="BilgilerMKK"><p>Pet Ad ID:</p><p>#@Model.Post.Id</p></div>
                     </div>
                 </div>*@
-            </div>
         </div>
     </div>
+</div>
 <!-- popular_causes_area_end  -->

@@ -17,10 +17,16 @@
         <div class="row">
             @{foreach (var post in Model.Posts)
                 {
+
+
                     <div class="col-lg-4 col-md-6">
                         <div class="single_cause">
                             <div class="thumb max">
-                                <img class="imageOpacityMK" src="@Url.Content("~/images/" + post.ImagePostMappings[0].Image.Path)" alt="">
+                                @if (post.ImagePostMappings.Count > 0)
+                                {
+                                    <img class="imageOpacityMK" src="@Url.Content("~/images/" + post.ImagePostMappings[0].Image.Path)" alt="">
+
+                                }
                             </div>
                             <div class="causes_content">
                                 <div class="balance justify-content-between align-items-center textCenterMK">
@@ -50,6 +56,6 @@
                     </div>
                 }
             }
+        </div>
     </div>
-</div>
 </div>
